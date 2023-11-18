@@ -9,12 +9,12 @@ const Page = async () => {
   // const topAnime = await response.json();
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   let recomendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
-  
-  recomendedAnime = reproduce(recomendedAnime , 4)
+
+  recomendedAnime = reproduce(recomendedAnime, 4)
   // recomendedAnime = { data: recomendedAnime.slice(4, 8) }
 
   return (
-    <>
+    <div className="container mx-auto">
       <section>
         <Header title="Paling Populer" linkTitle="Lihat Semua" linkHref="/populer" />
         <AnimeList api={topAnime} />
@@ -23,7 +23,7 @@ const Page = async () => {
         <Header title="Rekomendasi" />
         <AnimeList api={recomendedAnime} />
       </section>
-    </>
+    </div>
   );
 };
 
