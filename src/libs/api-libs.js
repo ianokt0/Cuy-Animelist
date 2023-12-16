@@ -21,9 +21,10 @@ export const reproduce = (data, gap) => {
     return response
 }
 
-export const getUserResponse = async (resource) => {
+export const getUserResponse = async (resource , token) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL_HRM}/${resource}`,{
         headers: {Authorization: 'Bearer 2|tsfbbnZT2I3BUFgXlQuxH1p0fvI97VmOuJIUG3Tp2c71a56d'}
+        // headers: {Authorization: `Bearer ${token}`}
     })
     .then(resp => resp.json())
 
