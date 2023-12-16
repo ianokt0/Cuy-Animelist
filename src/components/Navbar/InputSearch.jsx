@@ -24,7 +24,7 @@ const InputSearch = () => {
             ref={searchRef}
             onKeyDown={handleSearch}
             />
-            <button className="absolute top-2 end-2" onClick={handleSearch}>
+            <button className="absolute top-2 end-2" onClick={handleSearch} aria-label="search">
                 <MagnifyingGlass size={24} />
             </button>
         </div>
